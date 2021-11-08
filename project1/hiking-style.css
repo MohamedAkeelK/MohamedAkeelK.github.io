@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+/* body {
+  margin: 0;
+  padding: 0;
+} */
+
+.body-ctr h1 {
+  text-align: center;
+}
+
+.img-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.banner-text-box {
+  width: 400px;
+  height: 269px;
+  padding: 30px;
+  border: 4px solid rgb(71, 82, 236);
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: larger;
+  display: flex;
+  align-items: center;
+  background-color: lightgrey;
+}
+
+/* .banner-text-box  */
+
+#hiking1,
+#hiking2 {
+  border: 3px solid black;
+}
+
+.body-ctr p {
+  margin-top: 30px;
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+footer ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+footer ul li {
+  margin-left: 15px;
+  font-size: xx-large;
+}

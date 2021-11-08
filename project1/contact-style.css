@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.top-box {
+  padding-top: 25px;
+  text-align: center;
+}
+
+.top-box h1 {
+  letter-spacing: 0.8rem;
+}
+
+.top-box h2 {
+  color: gray;
+  margin-top: 40px;
+}
+
+.contact-box {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+.left-box {
+  font-size: 1.5rem;
+  color: gray;
+}
+
+.left-box ul {
+  list-style: none;
+}
+
+.left-box ul li {
+  margin-top: 15px;
+  width: 30vw;
+}
+
+.right-box {
+  /* background-color: gray; */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.top-input {
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.top-input input {
+  width: 380px;
+  padding: 10px;
+  border: 1px solid rgb(192, 192, 192);
+}
+
+.right-box .bottom-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 10px;
+}
+
+.right-box .bottom-input textarea {
+  width: 800px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: 1px solid rgb(192, 192, 192);
+}
+
+.right-box .bottom-input button {
+  align-self: flex-end;
+  margin-right: 35px;
+  padding: 15px 25px 15px 25px;
+  background-color: black;
+  color: whitesmoke;
+}
+
+.i2 {
+  /* margin-left: 60px; */
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+footer ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+footer ul li {
+  margin-left: 15px;
+  font-size: xx-large;
+}
