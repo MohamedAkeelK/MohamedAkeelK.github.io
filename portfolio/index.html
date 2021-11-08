@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website1</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="animate.css">
+    <script src="https://kit.fontawesome.com/8b668516c4.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        // var data = new google.visualization.DataTable();
+        // data.addColumn('string', 'Topping');
+        // data.addColumn('number', 'Skill Level');
+        // data.addRows([
+        //   ['HTML', 9, 'red'],
+        //   ['CSS', 9],
+        //   ['Javascript', 6],
+        //   ['React', 2.5],
+        //   ['Postgresql', 1.5],
+        //   ['Sequelize',1.5]
+        // ]);
+        var data = google.visualization.arrayToDataTable([
+         ['Element', 'My Skills', { role: 'style' }],
+         ['HTML', 9, 'tomato'],            // RGB value
+         ['CSS', 8, 'tomato'],            // English color name
+         ['Javascript', 5, 'tomato'],
+         ['React', 2, 'tomato' ], // CSS-style declaration
+      ]);
+
+        // Set chart options
+        var options = {'title':'My current Web Devlopment skills',
+                       'width':530,
+                       'height':400,
+                       'backgroundColor': 'rgb(224, 224, 224)',
+                       'fontSize': '20',
+                       'legend': 'left'};
+
+        // Instantiate and draw ourchart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+
+
+<body>
+<div id="body-wrapper">
+    <header>
+        <div class="logo-wrapper">
+            <div class="logo">Portfoli<div id="o">o</div></div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <!-- <li><a class="nav-item" href="#offer">Services</a></li> -->
+                <li><a class="nav-item" href="./resume.html">Resume</a></li>
+                <li><a class="nav-item" href="#about">About</a></li>
+                <li><a class="nav-item" href="#portfolio">Portfolio</a></li>
+                <li><button class="nav-item-btn" href="#contact">Contact</button></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main>
+        <div class="main-wrapper">
+            <div class="hero-content">
+                <h2>Hey, I'm Akeel.</h2>
+                <p>Welcome to my personal portfolio. Are you interested in working together?</p>
+                <button class="main-btn">
+                    Contact
+                </button>
+            </div>
+        
+            <div class="avatar-container">
+                 <div id="my-avatar"></div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+   <!-- Offer services section -->
+    
+    
+    <!-- <section id="offer">
+
+        <h1 class="offer-heading">Services</h1>
+        <hr>
+        <div class="offer-wrapper">
+            
+            <div class="box1">
+                <a href="#"><i class="fas fa-laptop"></i></a>
+                <h3>Web Design</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi impedit consequatur libero optio consectetur quidem quas voluptatem animi dicta, ea eveniet sapiente. Ea incidunt eius eaque optio nihil, minima neque.</p>
+            </div>
+
+            <div class="box2">
+                <a href="#"><i class="fas fa-laptop-code"></i></a>
+                <h3>Web Devlopment</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit velit minima adipisci dolor tempore nam, quia itaque. Deserunt tenetur numquam aperiam temporibus corporis illo ea repudiandae. Sequi doloribus earum sit?</p>
+            </div>
+
+            <div class="box3">
+                <a href="#"><i class="fas fa-house-user"></i></a>
+                <h3>Web Design</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quis beatae, dicta ex totam perferendis quos labore, excepturi quia voluptatibus soluta sunt aliquid amet tenetur maiores voluptatem consequuntur vitae cumque.</p>
+            </div>
+
+        </div>
+        <hr class="line-bottom">
+    </section> -->
+
+
+  
+
+
+    <section id="about">
+        
+    <div class="about-wrapper">
+        
+        <!-- <div id="my-img"></div> -->
+        <div class= "chart-wrapper">
+            <div id="chart_div"></div>
+        </div>
+        
+        
+        <div class="about-text">
+            <h1>About Me</h1><hr>
+            <p>Computer Science student at Queensborough Community College with a passion for tech and a desire
+                to learn. Currently in a joint program with John Jay College of Criminal Justice - Majoring in Computer 
+                Science and Information Security. Seeking to gain a position with a growing and innovative company.</p>
+                <br/>  </p>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur atium culpa eveniet dolorem numquam </p> -->
+        </div>
+    </div>
+    </section>
+
+   
+    <section id="portfolio">
+        <hr>
+        <div class="heading"><a href="#">Portfolio Projects</a></div>
+
+        <div class="collage">
+            <div class="box1 c-1">
+                <a href="#">Project 1</a>
+            </div>
+            <div class="box2 c-1">
+                <a href="#">Project 2</a>
+            </div>
+            <div class="box2 c-1">
+                <a href="#">Project 3</a>
+            </div>
+            <div class="box2 c-1">
+                <a href="#">Project 4</a>
+            </div>
+            <div class="box2 c-1">
+                <a href="#">Project 5</a>
+            </div>
+            <div class="box2 c-1">
+                <a href="#">Project 6</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="content">
+            <h2>Contact Me</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo officia, praesentium et quia natus sapiente inventore voluptatem consectetur ratione ea ipsum possimus dignissimos debitis cupiditate veritatis error enim vitae facere.</p>
+        </div>
+
+        <div class="container">
+            <div class="contact-info">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>(347)-355-7535</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>mohamedakeelkhan@gmail.com</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>New York, Metroplitain Area</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form action="MAILTO:mohamedakeelkhan@gmail.com" method="POST" enctype="text/plain">
+                    <h2>Send Message</h2>
+                    <div class="input-box">
+                        <input type="text" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" required="required">
+                        <span>Your Email</span>
+                    </div>
+                    <div class="input-box">
+                        <textarea name="" id="" cols="30" rows="10" required="required"></textarea>
+                        <span>Your Message...</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" name="" value="send">
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="quote">
+        <div class="quote-wrapper">
+            <p class="quote-item">"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est nostrum ad, eum impedit explicabo nobis atque sunt natus nesciunt nisi aut tempora quibusdam voluptates voluptate ratione aspernatur deleniti rem deserunt"</p>
+        </div>
+    </section>
+    
+
+    <footer class="footer">
+        <div class="inner-footer">
+            <div class="social-links">
+                <ul>
+                    <li class="social-items"><a href="#"><i class="fab fa-github"></i></a></li>
+                    <li class="social-items"><a href="https://www.linkedin.com/in/mohamed-khan" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="social-items"><a href="#"><i class="fas fa-envelope-open-text"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="outer-footer">
+            <div class="text-links">
+                <ul>
+                    <li class="text-items"><a href="#home">Home</a></li>
+                    <li class="text-items"><a href="#about">About</a></li>
+                    <li class="text-items"><a href="#portfolio">Portfolio</a></li>
+                    <li class="text-items"><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <small>@2020 Created & Designed by Akeel.</small>
+        </div>
+    </footer>
+
+</div>
+
+
+<script src="index.js"></script>
+</body>
+</html>

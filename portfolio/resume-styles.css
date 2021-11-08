@@ -1,0 +1,100 @@
+/* html body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+} */
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+} */
+
+body {
+  /* width: 0vw; */
+  margin: auto;
+  background-color: whitesmoke;
+}
+
+/******** NAVIGATION BAR */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: rgb(32, 32, 32);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.logo {
+  margin-left: 1.8rem;
+  font-size: 3rem;
+  color: whitesmoke;
+}
+
+.logo #o {
+  display: inline;
+  color: tomato;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-right: 2rem;
+}
+
+.nav-item {
+  text-decoration: none;
+  margin: 2rem;
+  color: rgb(243, 241, 241);
+  font-size: 1.2rem;
+  padding-bottom: 2rem;
+}
+
+.nav-item:hover {
+  color: tomato;
+  border-bottom: 2px solid tomato;
+}
+
+.nav-item-btn {
+  margin-left: 2rem;
+  padding: 0.6rem;
+  background-color: tomato;
+  color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.nav-item-btn:hover {
+  background-color: black;
+  color: whitesmoke;
+  border: 1px solid black;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.resume {
+  width: 60%;
+  margin: auto;
+  margin-top: 13%;
+}
+
+.resume-document {
+  background-color: white;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

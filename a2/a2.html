@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📃 Assignment 2</title>
+    <link rel="stylesheet" href="a2-style.css" />
+  </head>
+  <body>
+    <div class="body-ctr">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#" id="myBtn">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">BOOK</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="main-content">
+        <div id="a1-box">
+          <object
+            type="text/html"
+            data="https://mohamedakeelk.github.io/a1.html"
+            width="300px"
+            height="300px"
+            style="overflow: auto; border: 5px ridge hotpink"
+          ></object>
+        </div>
+
+        <div class="row2">
+          <img
+            src="./astro-img.jpg"
+            alt="astronaut-with-speaker"
+            width="220px"
+          />
+
+          <div class="part3">
+            <div class="text-box">
+              <p id="hotpink-p">
+                This is the hotpink paragraph, font family is Arial
+              </p>
+              <p id="pink-p">
+                This is the pink paragraph, font family is Courier
+              </p>
+              <p id="lightpink-p">
+                This is the lightpink paragraph, font family is Corsiva
+              </p>
+            </div>
+
+            <button>This is a button</button>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <h4>Study Button, input, form, and textarea elements</h4>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("myBtn").addEventListener("click", myFunction);
+
+      function myFunction() {
+        alert("Welcome to assignment 2! this is an alert box.");
+      }
+    </script>
+  </body>
+</html>
