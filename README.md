@@ -7,3 +7,7 @@
 # assignment 1 - https://mohamedakeelk.github.io/a1/a1.html
 
 # assignment 2 - https://mohamedakeelk.github.io/a2/a2.html
+
+# assignment 3 - https://mohamedakeelk.github.io/a3/index.html
+
+# assignment 4 - https://mohamedakeelk.github.io/a4/index.html

@@ -1,0 +1,117 @@
+body {
+  background-image: url("./spongebob.png");
+  background-color: rgba(0, 0, 0, 0.603);
+  background-blend-mode: multiply;
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+.ctr {
+  width: 80%;
+  margin: 30px auto;
+  background-color: whitesmoke;
+  padding: 30px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.item-box {
+  border: 2px solid black;
+  width: 30%;
+  padding: 30px 10px;
+  text-align: center;
+}
+
+.item-box p {
+  padding: 0px 5px 10px 5px;
+}
+
+.item-box a {
+  text-decoration: none;
+  background-color: rgb(245, 84, 25);
+  color: whitesmoke;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.mymodal,
+.mymodal2,
+.mymodal3 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(13, 0, 197, 0.308);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mymodal:target,
+.mymodal2:target {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mymodal3:target {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.msgblock {
+  background-color: rgba(245, 245, 245, 0.993);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+.msgblock img {
+  height: 300px;
+}
+
+.heading {
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(15, 15, 15);
+  color: whitesmoke;
+}
+
+.heading a {
+  width: 30px;
+  color: rgb(160, 23, 23);
+  text-decoration: none;
+  padding: 10px;
+  background-color: rgba(233, 233, 233, 0.438);
+  font-size: xx-large;
+  text-align: center;
+  margin-right: 30px;
+}
+
+.msgblock h1 {
+  padding: 10px 20px;
+}
+
+.msgblock p {
+  border-radius: 2px;
+  padding: 10px 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: rgb(253, 190, 253);
+}
