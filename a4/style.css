@@ -30,6 +30,11 @@ body {
   text-align: center;
 }
 
+/* .item-box img {
+  width: 70px;
+  height: 70px;
+} */
+
 .item-box p {
   padding: 0px 5px 10px 5px;
 }
