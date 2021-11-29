@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>❓ Project 3</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1 class="title">GUESS MY NUMBER</h1>
+    <h2 class="instruction">Guess the number between 1 and 100</h2>
+
+    <div class="ctr">
+      <div class="game-box">
+        <div class="game-box-top">
+          <div class="left-score-box">
+            <p class="guesses-left">
+              <strong>Guesses Left: <span id="tries"></span></strong>
+            </p>
+            <p class="highest-score-s">
+              <strong
+                >Highest Score: <span class="highest-score"></span
+              ></strong>
+            </p>
+          </div>
+
+          <div class="right-box-btn">
+            <a href="#" class="reset-btn">Reset</a>
+          </div>
+        </div>
+
+        <div class="play-box">
+          <div class="play-box-wrapper">
+            <img id="main-img" src="./cranium.png" alt="driver" width="150px" />
+            <input
+              class="guess-val"
+              id="user-input"
+              type="number"
+              value="Enter Your Guess"
+            />
+            <input class="check-btn" type="submit" value="Check" />
+            <p class="hint">Your number is..</p>
+          </div>
+        </div>
+
+        <div class="history-box">
+          <p class="history-title">Guess History</p>
+          <div class="hist-list">
+            <ul class="history-guess-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
