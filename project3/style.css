@@ -94,9 +94,12 @@ body {
   border-radius: 10px;
 }
 
+.right-box-btn a:hover {
+  background-color: rgb(192, 192, 192);
+}
+
 .play-box {
   width: 75%;
-  min-height: 75vh;
   margin: auto;
   margin-top: 2.5rem;
   border-radius: 20px;
@@ -121,13 +124,17 @@ body {
   margin-top: 1.5rem;
   padding: 0.7rem;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: bolder;
   border: none;
   border-radius: 30rem;
   -webkit-box-shadow: -4px -4px 39px 5px rgba(255, 255, 255, 0.53);
   -moz-box-shadow: -4px -4px 39px 5px rgba(255, 255, 255, 0.53);
   box-shadow: -4px -4px 39px 5px rgba(255, 255, 255, 0.53);
+}
+
+.guess-val::placeholder {
+  font-size: 0.9rem;
 }
 
 .check-btn {
@@ -139,6 +146,10 @@ body {
   border-radius: 10px;
   background-color: rgb(24, 144, 24);
   color: whitesmoke;
+}
+
+.check-btn:hover {
+  background-color: rgb(26, 26, 26);
 }
 
 .hint {
@@ -174,6 +185,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: cornflowerblue;
+  border-radius: 20px;
+  padding: 3.5rem;
+}
+
+.losebox {
+  background-color: crimson;
 }
 
 .winbox img {
@@ -208,7 +226,8 @@ body {
   margin-top: 0.8rem;
   padding: 15px;
   border: none;
+  border-radius: 15px;
   background-color: green;
   color: white;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }

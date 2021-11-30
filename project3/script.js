@@ -108,7 +108,7 @@ function lose(inputVal) {
 
   const divLose = document.createElement("div");
   divLose.innerHTML = `
-    <div class="winbox">
+    <div class="winbox losebox">
       <img src="./lose.png" width="200px" / >
       <div class="congrat">Unfortunately You Lost the Game</div>
       <div class="m2">Dont give up and try again. You can win next time.</div>
