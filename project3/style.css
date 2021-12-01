@@ -7,26 +7,45 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(3, 41, 97);
+  background: rgb(0, 172, 249);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 172, 249, 1) 0%,
+    rgba(133, 56, 28, 1) 32%,
+    rgba(38, 140, 10, 1) 100%
+  );
+  /* background-image: url("./back.png");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply; */
+
+  /* display: inline-block; */
+  /* background-repeat: repeat-y; */
+  /* font-family: sans-serif; */
 }
 
 .ctr {
   /* margin: 0;
   padding: 0; */
-  background-color: rgb(27, 27, 27);
+  background-color: rgb(5, 5, 5);
   width: 70%;
   margin: auto;
   margin-bottom: 5rem;
   border-radius: 10px;
+  /* -webkit-box-shadow: -4px -4px 39px 5px rgba(255, 255, 255, 0.53);
+  -moz-box-shadow: -4px -4px 39px 5px rgba(255, 255, 255, 0.53);
+  box-shadow: -4px -4px 39px 5px rgba(255, 255, 255, 0.53); */
 }
 
 .title {
   margin: 0;
   text-align: center;
   margin-top: 2.5rem;
-  font-size: 2.5rem;
+  font-size: 6rem;
   animation: headingAnimate 4s linear;
-  color: whitesmoke;
+  /* color: whitesmoke; */
+  font-family: "Modak", cursive;
+  padding: 0;
 }
 
 @keyframes headingAnimate {
@@ -41,9 +60,10 @@ body {
 .instruction {
   text-align: center;
   margin-bottom: 1rem;
-  margin-top: 0.3rem;
+  margin-top: 0;
   font-size: 1.5rem;
   color: whitesmoke;
+  font-family: "Cinzel", serif;
 }
 .game-box {
   display: flex;
@@ -60,13 +80,14 @@ body {
 }
 
 .left-score-box {
-  width: 10rem;
+  width: 20ch;
   margin-left: 1rem;
   margin-top: 1rem;
   padding: 0.2rem 0.8rem;
   border-radius: 10px;
   font-size: 1.1rem;
   background-color: rgb(154, 226, 219);
+  font-family: "Cinzel", serif;
 }
 
 .left-score-box .guesses-left {
@@ -78,6 +99,16 @@ body {
   margin: 0;
   margin-top: 0.6rem;
   margin-bottom: 1rem;
+}
+
+#tries {
+  color: red;
+  margin-left: 1rem;
+}
+
+.highest-score {
+  color: green;
+  margin-left: 1rem;
 }
 
 .right-box-btn {
@@ -92,6 +123,7 @@ body {
   background-color: rgb(154, 226, 219);
   border: none;
   border-radius: 10px;
+  font-family: "Cinzel", serif;
 }
 
 .right-box-btn a:hover {
@@ -104,7 +136,15 @@ body {
   margin-top: 2.5rem;
   border-radius: 20px;
 
-  background-color: rgba(148, 86, 61, 0.993);
+  /* background-color: rgba(148, 86, 61, 0.993); */
+  background-color: rgba(0, 0, 0, 0.65);
+  background-image: url("./back.png");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  -webkit-box-shadow: -4px -4px 39px 5px rgba(255, 255, 255, 0.53);
+  -moz-box-shadow: -4px -4px 39px 5px rgba(255, 255, 255, 0.53);
+  box-shadow: -4px -4px 39px 5px rgba(255, 255, 255, 0.53);
 }
 
 .play-box-wrapper {
@@ -146,6 +186,7 @@ body {
   border-radius: 10px;
   background-color: rgb(24, 144, 24);
   color: whitesmoke;
+  font-family: "Cinzel", serif;
 }
 
 .check-btn:hover {
@@ -158,6 +199,9 @@ body {
   font-size: 1.5rem;
   color: whitesmoke;
   /* max-width: 20ch; */
+  font-family: "Cinzel", serif;
+  padding: 15px;
+  text-align: center;
 }
 
 .history-box {
@@ -191,7 +235,7 @@ body {
 }
 
 .losebox {
-  background-color: crimson;
+  background-color: rgb(116, 19, 75);
 }
 
 .winbox img {
@@ -230,4 +274,17 @@ body {
   background-color: green;
   color: white;
   font-size: 1rem;
+}
+
+#main-img {
+  animation: mainImgAnimate 4s linear;
+}
+
+@keyframes mainImgAnimate {
+  0% {
+    transform: translateY(-1000px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
 }

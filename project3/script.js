@@ -14,7 +14,7 @@ audio.src = "./wrong.wav";
 const audio2 = new Audio();
 audio2.src = "./correct.wav";
 // number variables
-let secretNumber = Math.floor(Math.random() * 100) + 2;
+let secretNumber = Math.floor(Math.random() * 99) + 2;
 console.log(secretNumber);
 
 let triesLeft = 10;
@@ -36,7 +36,8 @@ resetBtn.addEventListener("click", () => {
 // check answer when check btn in clicked
 function checkAnswer() {
   // get user val
-  const userInput = document.querySelector("#user-input").value;
+  const userInput = parseInt(document.querySelector("#user-input").value);
+  console.log(userInput);
   // update guess history
   const listItem = document.createElement("li");
   listItem.setAttribute("class", "hgli");
@@ -58,8 +59,11 @@ function checkAnswer() {
 }
 
 function win(inputVal) {
-  highestScore = triesLeft;
-  highscore.innerHTML = highestScore;
+  if (triesLeft >= highestScore) {
+    highestScore = triesLeft;
+    highscore.innerHTML = highestScore;
+  }
+  // highscore.innerHTML = highestScore;
 
   audio2.play();
 
@@ -165,16 +169,26 @@ function resetGame() {
   ul.setAttribute("class", "history-guess-list");
   document.querySelector(".hist-list").append(ul);
   secretNumber = Math.floor(Math.random() * 100) + 2;
+  hint.innerHTML = "Your Number is..";
 }
 
 function constraints(inputVal) {
-  if (inputVal.value == null && !(inputVal.length > 0)) {
+  parseInt(inputVal);
+  if (inputVal.length == 0) {
     hint.innerHTML = "no input";
+  } else if (inputVal <= 1) {
+    hint.innerHTML =
+      "Out of range! You can only enter numbers between 1 and 100";
+  } else if (inputVal >= 100) {
+    hint.innerHTML =
+      "Out of range! You can only enter numbers between 1 and 100";
+  } else {
+    hint.innerHTML = "NAN";
   }
-  if ((inputVal < 0 || inputVal >= 100) && inputVal.length > 0) {
-    hint.innerHTML = "You can only enter numbers between 1 and 100";
-  }
-  if (inputVal == 0 || inputVal == 1) {
-    hint.innerHTML = "You can only enter numbers between 1 and 100";
-  }
+  // if ((inputVal < 0 || inputVal >= 100) && inputVal.length > 0) {
+  //   hint.innerHTML = "You can only enter numbers between 1 and 100";
+  // }
+  // if (inputVal == 0 || inputVal == 1) {
+  //   hint.innerHTML = "You can only enter numbers between 1 and 100";
+  // }
 }
