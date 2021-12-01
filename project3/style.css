@@ -288,3 +288,30 @@ body {
     transform: translateY(0px);
   }
 }
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 18vw;
+  }
+  .game-box-top {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .left-score-box {
+    margin-left: 0;
+    width: 15ch;
+  }
+  .right-box-btn {
+    margin-top: 4rem;
+  }
+  .history-box {
+    width: 15ch;
+  }
+  .history-title {
+    margin: 0;
+    font-size: 2ch;
+    padding-right: 5px;
+    padding-top: 5px;
+  }
+}
