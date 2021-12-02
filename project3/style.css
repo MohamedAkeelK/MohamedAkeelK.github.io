@@ -294,6 +294,9 @@ body {
   .title {
     font-size: 18vw;
   }
+  .ctr {
+    width: 100%;
+  }
   .game-box-top {
     flex-direction: column;
     justify-content: space-evenly;
@@ -314,5 +317,8 @@ body {
     font-size: 2ch;
     padding-right: 5px;
     padding-top: 5px;
+  }
+  .guess-val {
+    width: 80%;
   }
 }
