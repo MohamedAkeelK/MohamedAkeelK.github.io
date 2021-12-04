@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=div.b, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <div class="body-ctr">
+      <section class="main-content">
+        <div class="text">
+          <h1 class="title">Collecting Weight and Height for BMI</h1>
+          <h2 class="instruct">
+            Please fill the entries to get population statistics on Weight,
+            Height, and BMI
+          </h2>
+
+          <div class="my-form">
+            <form class="" action="./thankyou.html" method="post">
+              <label for="">Email</label>
+              <input
+                type="email"
+                name="email_name"
+                value=""
+                required
+                placeholder="Enter your Email"
+              />
+              <input
+                type="number"
+                name="height_name"
+                min="30"
+                max="100"
+                value=""
+                required
+                placeholder="Enter your Height in Meters"
+              />
+              <input
+                type="number"
+                name="weight_name"
+                min="30"
+                max="100"
+                value=""
+                required
+                placeholder="Enter your Weight in kg"
+              />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

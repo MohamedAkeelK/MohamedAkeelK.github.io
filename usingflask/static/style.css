@@ -1,0 +1,25 @@
+.body-ctr {
+  background-color: rgb(231, 231, 231);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  margin-top: 1rem;
+}
+
+button {
+  margin: 1rem 0;
+}
