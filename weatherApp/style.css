@@ -1,0 +1,8 @@
+.loading {
+  visibility: hidden;
+}
+
+.loading::after {
+  visibility: visible;
+  content: "Loading Weather...";
+}
