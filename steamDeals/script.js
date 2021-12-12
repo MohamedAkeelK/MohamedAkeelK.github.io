@@ -29,14 +29,21 @@ let addCard = (data) => {
     let card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-        <img src="${data[i].thumb}" width="300px" alt="" srcset="" />
+        <img src="${
+          data[i].thumb
+        }" width="300px" alt="" srcset="" class="thumbimg"/>
         <div class="card-text">
-          <h1>${data[i].title}</h1>
-          <h2>Sale Price: $${data[i].salePrice}</h2>
-          <h2>normal price: $${data[i].normalPrice}</h2>
-          <h2>store:${matchStore(data[i].storeID)}</h2>
-          <h2>Savings: ${data[i].savings.slice(0, 2)}%</h2>
+          <div class="left-box">
+            <h1 class="card-title">${data[i].title}</h1>
+            <h2 class="savings">Savings: ${data[i].savings.slice(0, 2)}%</h2>
+            <h2 class="card-sale-p">Sale Price: $${data[i].salePrice}</h2>
+            <h2 class="card-norm-p">normal price: $${data[i].normalPrice}</h2>
+            <h2 class="store">Store: ${matchStore(data[i].storeID)}</h2>
+
+          </div>
+
         </div>
+        
         `;
     cardctr.append(card);
   }
@@ -46,7 +53,7 @@ let matchStore = (num) => {
   console.log(num);
   for (let i = 0; i < stores.length; i++) {
     if ((num = stores[i].storeID)) {
-      return " " + stores[i].storeName;
+      return stores[i].storeName;
     }
   }
 };

@@ -6,8 +6,19 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(8, 8, 49);
+  /* background-color: #2a475e; */
+  /* background-color: rgb(24, 23, 23); */
+  background-color: rgb(224, 224, 224);
   color: white;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.logo {
+  font-size: 3em;
+}
+.dollar {
+  font-weight: 1000;
+  color: rgb(2, 139, 2);
 }
 
 .body-ctr {
@@ -16,51 +27,169 @@ body {
 
 .navbar {
   padding: 20px;
-  background-color: rgb(57, 57, 122);
+  background-color: #2a475e;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.steamS {
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 0.5rem 4rem;
+  border-radius: 15px;
+  background-color: rgb(22, 22, 22);
+  color: whitesmoke;
+}
+
+.steamS:hover {
+  color: white;
+  background-color: rgb(43, 43, 43);
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  transition: 0.5s ease-in-out;
 }
 
 .hero {
-  background-image: url("./spongebob.png");
+  background-image: url("./wallpaper.jpg");
   background-size: cover;
   background-position: center;
   background-color: rgba(0, 0, 0, 0.479);
   background-blend-mode: multiply;
   width: 100%;
-  height: 60vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .hero-text {
-  width: 50%;
+  width: 80%;
 }
 
 .hero-text h1 {
-  font-size: 3em;
+  font-size: 4em;
 }
 
 .hero-text p {
   margin-top: 10px;
   font-size: 1.5em;
+  width: 60ch;
+  margin-bottom: 2rem;
 }
 
 .card-ctr {
-  /* display: flex;
-  flex-direction: column; */
+  margin-top: -7%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* flex-direction: column; */
 }
 
 .card {
-  background-color: rgb(57, 57, 122);
+  background-color: #2a475e;
+  /* background-color: rgb(24, 23, 23); */
+  border: 3px solid black;
   display: flex;
-  /* flex-direction: column; */
-  padding: 1em;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 3em;
   margin-top: 2em;
+  margin-bottom: 2.4rem;
+  border-radius: 20px;
+  width: 20%;
+
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 200;
 }
 
 .card-text {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;  */
-  margin-left: 3%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5%;
+}
+
+.thumbimg {
+  border: 1px solid black;
+}
+
+.card-title {
+  margin-top: 1.5rem;
+
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 200;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.card-sale-p {
+  margin-top: 1rem;
+  color: rgb(177, 47, 47);
+
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 200;
+}
+
+.card-norm-p {
+  margin-top: 0.8rem;
+  color: rgb(207, 200, 191);
+
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 200;
+}
+
+.savings {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  width: 13ch;
+  padding: 0.6rem;
+  margin-top: 2rem;
+  border-radius: 5px;
+  /* background-color: rgb(23, 110, 23); */
+  background: rgb(7, 127, 0);
+  /* background: linear-gradient(
+    90deg,
+    rgba(7, 127, 0, 1) 0%,
+    rgba(26, 142, 49, 1) 48%,
+    rgba(255, 255, 255, 0.63) 100%
+  ); */
+}
+
+img {
+  border-radius: 10px;
+}
+
+.store {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 200;
+  color: rgb(207, 200, 191);
+}
+
+.seeDeals {
+  text-decoration: none;
+  padding: 10px;
+  background-color: green;
+  color: whitesmoke;
+}
+
+footer {
+  width: 100%;
+  height: 30vh;
+  margin-top: 3rem;
+  background-color: rgb(24, 24, 24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+small {
+  font-size: 2rem;
+}
+
+footer a {
+  margin-left: 2rem;
+  text-decoration: none;
+  font-size: 2rem;
 }
