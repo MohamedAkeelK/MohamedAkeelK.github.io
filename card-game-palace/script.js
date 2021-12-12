@@ -138,7 +138,7 @@ let deck = {
     fetch("https://deckofcardsapi.com/api/deck/kohxg1tespsg/draw/?count=1")
       .then((response) => response.json())
       .then((data) => {
-        this.displayCard(data, clas);
+        return this.displayCard(data, clas);
         // console.log(data);
         // const { cards, deck_id, remaining } = data;
         // console.log(cards[0].image, deck_id, remaining);
@@ -147,23 +147,48 @@ let deck = {
   displayCard: function (data, clas) {
     const { cards, deck_id, remaining } = data;
     document.querySelector(clas).src = cards[0].image;
+    console.log(cards[0].image, deck_id, remaining);
   },
-  addToPile: function () {
+  addToPile: function (player) {
     fetch(
-      "https://deckofcardsapi.com/api/deck/kohxg1tespsg/pile/discardPile/add/?cards=AS,2Q"
+      "https://deckofcardsapi.com/api/deck/kohxg1tespsg/pile/" +
+        player +
+        "/add/?cards=AS,2Q"
     )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
         const { deck_id, piles, remaining } = data;
-        console.log(deck_id, piles.discardPile.remaining, remaining);
+        console.log(deck_id, piles.player1.remaining, remaining);
+      });
+  },
+  listCards: function (player) {
+    fetch(
+      "https://deckofcardsapi.com/api/deck/kohxg1tespsg/pile/" +
+        player +
+        "/list/"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        // const { deck_id, piles, remaining } = data;
+        // console.log(deck_id, piles.discardPile.remaining, remaining);
       });
   },
 };
 
-deck.drawCard(".card1");
-deck.drawCard(".card2");
-deck.drawCard(".card3");
+// let hand1 = () => {
+//   deck.drawCard(".card1");
+//   deck.drawCard(".card2");
+//   deck.drawCard(".card3");
+// };
+
+// let hand2 = () => {
+//   deck.drawCard(".carda");
+//   deck.drawCard(".cardb");
+//   deck.drawCard(".cardc");
+// };
+
 // deck. addToPile();
 
 // this.displayDeck(data));
