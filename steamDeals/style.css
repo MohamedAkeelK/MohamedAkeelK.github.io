@@ -41,6 +41,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 
 .steamS {
@@ -50,6 +53,7 @@ body {
   border-radius: 15px;
   background-color: rgb(22, 22, 22);
   color: whitesmoke;
+  margin-right: 5%;
 }
 
 .steamS:hover {
@@ -246,6 +250,13 @@ footer a {
   .navbar {
     display: flex;
     flex-direction: column;
+    width: 100%;
+  }
+  .logo {
+    margin-right: 2.5rem;
+  }
+  .steamS {
+    margin-right: 2rem;
   }
 
   .steamS {
