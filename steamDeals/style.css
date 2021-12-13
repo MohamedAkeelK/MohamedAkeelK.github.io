@@ -11,6 +11,7 @@ body {
   background-color: rgb(224, 224, 224);
   color: white;
   font-family: "Source Sans 3", sans-serif;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -75,7 +76,7 @@ body {
 .hero-text p {
   margin-top: 10px;
   font-size: 1.5em;
-  width: 60ch;
+  max-width: 50ch;
   margin-bottom: 2rem;
 }
 
@@ -107,12 +108,13 @@ body {
 .card-text {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin-left: 5%;
+  justify-content: center;
+  /* margin-left: 5%; */
 }
 
 .thumbimg {
   border: 1px solid black;
+  align-self: center;
 }
 
 .card-title {
@@ -192,4 +194,70 @@ footer a {
   margin-left: 2rem;
   text-decoration: none;
   font-size: 2rem;
+}
+
+@media (max-width: 1340px) {
+  .thumbimg {
+    width: 250px;
+    transition: 0.5s, linear;
+  }
+}
+
+@media (max-width: 1110px) {
+  .thumbimg {
+    width: 220px;
+    transition: 0.5s, linear;
+  }
+}
+
+@media (max-width: 956px) {
+  .card-ctr {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -12%;
+  }
+  .card {
+    width: 50%;
+  }
+  .thumbimg {
+    width: 300px;
+  }
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+  footer {
+    flex-direction: column;
+  }
+  small {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 570px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .steamS {
+    margin-top: 2rem;
+  }
+  .thumbimg {
+    width: 200px;
+  }
+}
+
+@media (max-width: 340px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .steamS {
+    margin-top: 2rem;
+  }
+  .thumbimg {
+    width: 150px;
+  }
 }
