@@ -1,4 +1,4 @@
-import { Ball } from "./Ball.js";
+import { Ball, BALL_SIZE } from "./Ball.js";
 import { Entity } from "./Entity.js";
 
 export class Block extends Entity {
@@ -51,18 +51,24 @@ export class Block extends Entity {
       ) {
         // top of block
         // console.log("Top of block");
-        if (this.ball.y + 30 > block.y && this.ball.direction === "down_left") {
+        if (
+          this.ball.y + BALL_SIZE > block.y &&
+          this.ball.direction === "down_left"
+        ) {
           this.removeBlock(block);
           this.ball.setDirectionUpLeft();
         }
         if (
-          this.ball.y + 30 > block.y &&
+          this.ball.y + BALL_SIZE > block.y &&
           this.ball.direction === "down_right"
         ) {
           this.removeBlock(block);
           this.ball.setDirectionUpRight();
         }
-        if (this.ball.y + 30 > block.y && this.ball.direction === "down") {
+        if (
+          this.ball.y + BALL_SIZE > block.y &&
+          this.ball.direction === "down"
+        ) {
           this.removeBlock(block);
           this.ball.setDirectionUp();
         }
