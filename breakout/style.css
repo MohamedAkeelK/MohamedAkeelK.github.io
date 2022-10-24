@@ -72,6 +72,16 @@ body {
   z-index: 3;
   top: 300px;
  }
+
+ .restart-btn {
+  font-size: 3rem;
+  position: fixed;
+  padding: 20px;
+  left: 45%;
+  top: 50%;
+  border: 2px solid black;
+  text-align: center;
+ }
  
  @keyframes scroll-background {
   from {

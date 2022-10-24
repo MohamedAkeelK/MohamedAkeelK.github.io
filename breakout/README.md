@@ -36,3 +36,4 @@ https://www.youtube.com/watch?v=ov00c8Fzik8&t=2892s
 - fix double collision when ball hits more than one block.
 - add powers.
 - add a random color to each brick
+- add different difficulty modes.

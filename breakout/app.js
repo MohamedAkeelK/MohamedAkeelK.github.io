@@ -5,9 +5,17 @@ pointsEl.className = "points";
 pointsEl.innerText = `POINTS: ${points}`;
 document.body.append(pointsEl);
 
+let restartButton = document.createElement("div");
+restartButton.className = "restart-btn";
+restartButton.innerText = "restart";
+
+restartButton.addEventListener("click", () => {});
+
 import { Player } from "./Player.js";
 import { Ball } from "./Ball.js";
 import { Block } from "./Block.js";
+
+let GAME_OVER = false;
 
 // CONTROLS
 const keys = {
@@ -84,8 +92,11 @@ for (let row = 0; row < 3; row++) {
 // MAIN GAME UPDATES
 const update = () => {
   if (ball.y > window.innerHeight) {
+    GAME_OVER = true;
     pointsEl.innerText = `GAME OVER, YOU LOSE!`;
     pointsEl.className = "loser";
+    document.body.append(restartButton);
+
     return;
   }
   if (points === 420) {
