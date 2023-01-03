@@ -10,14 +10,13 @@ const UP_LEFT = "up_left";
 const UP_RIGHT = "up_right";
 const DOWN_LEFT = "down_left";
 const DOWN_RIGHT = "down_right";
-export const BALL_SIZE = 20;
 
 export class Ball extends Entity {
   constructor({ getOverlappingPlayer }) {
     super({ className: "ball" });
-    this.SPEED = 11;
+    this.SPEED = 12;
     this.setX(window.innerWidth / 2 - 50);
-    this.setY(window.innerHeight - 350);
+    this.setY(window.innerHeight - 370);
     this.setDirectionDown();
     this.getOverlappingPlayer = getOverlappingPlayer;
   }
@@ -63,19 +62,19 @@ export class Ball extends Entity {
   }
   moveUpLeft() {
     this.setY(this.y - this.SPEED);
-    this.setX(this.x - 4);
+    this.setX(this.x - 3);
   }
   moveUpRight() {
     this.setY(this.y - this.SPEED);
-    this.setX(this.x + 5);
+    this.setX(this.x + 3);
   }
   moveDownLeft() {
     this.setY(this.y + this.SPEED);
-    this.setX(this.x - 5);
+    this.setX(this.x - 3);
   }
   moveDownRight() {
     this.setY(this.y + this.SPEED);
-    this.setX(this.x + 5);
+    this.setX(this.x + 3);
   }
 
   // MOVE IN DIRECTION,
@@ -107,14 +106,17 @@ export class Ball extends Entity {
     // BALL TO PLAYER COLLISION
     const player = this.getOverlappingPlayer(this);
     if (player) {
-      if (this.x <= player.x + 35) {
+      if (!(this.x >= player.x + 33) && !(this.x + 30 < player.x)) {
         this.setDirectionUpLeft();
-      } else if (this.x < player.x + 65) {
+        // console.log(this.direction);
+      }
+      if (!(this.x < player.x + 34) && !(this.x > player.x + 66)) {
         this.setDirectionUp();
-      } else if (this.x < player.x + 100) {
+        // console.log(this.direction);
+      }
+      if (!(this.x < player.x + 66) && !(this.x > player.x + 100)) {
         this.setDirectionUpRight();
-      } else {
-        console.log("huh");
+        // console.log(this.direction);
       }
     }
     // WALL COLLISION
@@ -130,16 +132,13 @@ export class Ball extends Entity {
     if (this.x < 0 && this.direction === UP_LEFT) {
       this.setDirectionUpRight();
     }
-    if (this.x + BALL_SIZE > window.innerWidth && this.direction === UP_RIGHT) {
+    if (this.x + 30 > window.innerWidth && this.direction === UP_RIGHT) {
       this.setDirectionUpLeft();
     }
     if (this.x < 0 && this.direction === DOWN_LEFT) {
       this.setDirectionDownRight();
     }
-    if (
-      this.x + BALL_SIZE > window.innerWidth &&
-      this.direction === DOWN_RIGHT
-    ) {
+    if (this.x + 30 > window.innerWidth && this.direction === DOWN_RIGHT) {
       this.setDirectionDownLeft();
     }
   }

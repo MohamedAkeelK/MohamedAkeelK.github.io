@@ -1,29 +1,15 @@
-let points = 0;
-
-let pointsEl = document.createElement("div");
-pointsEl.className = "points";
-pointsEl.innerText = `POINTS: ${points}`;
-document.body.append(pointsEl);
-
-let restartButton = document.createElement("div");
-restartButton.className = "restart-btn";
-restartButton.innerText = "restart";
-
-restartButton.addEventListener("click", () => {});
-
-import { Player } from "./Player.js";
-import { Ball } from "./Ball.js";
-import { Block } from "./Block.js";
-
-let GAME_OVER = false;
-
 // CONTROLS
 const keys = {
   a: false,
   d: false,
 };
 
-// EVENTS
+let blockRows = 7;
+let blockCols = 3;
+
+let winningPoint = blockRows * blockCols * 10;
+
+// KEY EVENTS
 document.addEventListener("keydown", (e) => {
   keys[e.key] = true;
 });
@@ -31,6 +17,10 @@ document.addEventListener("keydown", (e) => {
 document.addEventListener("keyup", (e) => {
   keys[e.key] = false;
 });
+
+import { Player } from "./Player.js";
+import { Ball } from "./Ball.js";
+import { Block } from "./Block.js";
 
 // COLLISION DETECTION
 const isOverlapping = (entity1, entity2) => {
@@ -56,6 +46,7 @@ const getOverlappingPlayer = (entity) => {
 const blockThatGotHit = () => {
   for (let block of blocks)
     if (isOverlapping(block, ball)) {
+      console.log("block hit");
       return block;
     }
   return;
@@ -65,44 +56,138 @@ const blockThatGotHit = () => {
 const removeBlock = (block) => {
   blocks.splice(blocks.indexOf(block), 1);
   block.remove();
-  pointsEl.innerText = `POINTS: ${(points += 20)}`;
+  pointsEl.innerHTML = `<span id="blahh">POINTS:</span> ${(points += 10)}`;
+  console.log("block removed");
 };
 
-// CREATE ASSETS
-const blocks = [];
-const ball = new Ball({ getOverlappingPlayer });
-const player = new Player();
-
 // CREATES BLOCKS
-let i = 0;
-for (let row = 0; row < 3; row++) {
-  for (let col = 0; col < 7; col++) {
-    let block = new Block({
-      x: col * 170 + 160,
-      y: row * 100 + 100,
-      blockThatGotHit,
-      removeBlock,
-      blockId: i + 1,
-      ball,
-    });
-    blocks.push(block);
+let createBlocks = () => {
+  let i = 0;
+  for (let row = 0; row < blockCols; row++) {
+    for (let col = 0; col < blockRows; col++) {
+      let block = new Block({
+        x: col * 170 + 160,
+        y: row * 100 + 100,
+        blockThatGotHit,
+        removeBlock,
+        blockId: i + 1,
+        ball,
+      });
+      blocks.push(block);
+    }
   }
-}
+};
+
+// CREATE POINTS AND START BUTTON
+let points = 0;
+
+let pointsEl = document.createElement("div");
+pointsEl.className = "points";
+pointsEl.innerHTML = `<span id="blahh">POINTS:</span> ${points}`;
+document.body.append(pointsEl);
+
+let startBtn = document.createElement("button");
+startBtn.innerText = "Start Game";
+startBtn.className = "startBtn";
+document.body.append(startBtn);
+
+let controlsEl = document.createElement("p");
+controlsEl.className = "controls";
+controlsEl.innerText = `use "a" and "d" to move player!`;
+document.body.append(controlsEl);
+
+// let resetBtn = document.createElement("button");
+// resetBtn.innerText = "reset Game";
+// resetBtn.className = "resetBtn";
+// document.body.append(resetBtn);
+
+// CREATE ASSETS
+let blocks = [];
+let ball = new Ball({ getOverlappingPlayer });
+let player = new Player();
+
+let resetGame = () => {
+  startBtn.style.visibility = "visible";
+  controlsEl.style.visibility = "visible";
+  startBtn.innerText = "Play Again";
+
+  clearInterval(myint);
+  // reset points
+  points = 0;
+  pointsEl.className = "points";
+  // pointsEl.innerText = points;
+  pointsEl.innerHTML = `<span id="blahh">POINTS:</span> <span id="mypoints  ">${points}</span>`;
+
+  // reset ball
+  document.querySelectorAll(".ball").forEach((e) => e.remove());
+  ball = new Ball({ getOverlappingPlayer });
+
+  // reset player
+  document.querySelectorAll(".player").forEach((e) => e.remove());
+  player = new Player();
+
+  // reset blocks
+  document.querySelectorAll("block").forEach((e) => {
+    e.remove();
+  });
+  blocks.forEach((block) => block.remove());
+  blocks = [];
+  createBlocks();
+};
+
+// creates blocks on first page load
+createBlocks();
+let myint;
+
+// ON START
+startBtn.addEventListener("click", () => {
+  clearInterval(myint);
+  resetGame();
+  myint = setInterval(update, 20);
+  startBtn.style.visibility = "hidden";
+  controlsEl.style.visibility = "hidden";
+
+  let loser = document.querySelector(".loser");
+
+  if (loser) {
+    // console.log(loser);
+    loser.style.backgroundColor = "transparent";
+  }
+});
+
+let checkLoser = () => {
+  if (ball.y > window.innerHeight) {
+    let loser = document.querySelector(".loser");
+
+    if (loser) {
+      // console.log(loser);
+      loser.style.backgroundColor = "rgba(0, 0, 0, 0.697)";
+    }
+    resetGame();
+    return true;
+  } else {
+    return false;
+  }
+};
+
+let checkWinner = () => {
+  if (points === winningPoint) {
+    resetGame();
+    return true;
+  } else {
+    return false;
+  }
+};
 
 // MAIN GAME UPDATES
 const update = () => {
-  if (ball.y > window.innerHeight) {
-    GAME_OVER = true;
+  if (checkLoser()) {
     pointsEl.innerText = `GAME OVER, YOU LOSE!`;
     pointsEl.className = "loser";
-    document.body.append(restartButton);
-
-    return;
   }
-  if (points === 420) {
+  if (checkWinner()) {
     pointsEl.innerText = `GAME OVER, YOU WIN!`;
     pointsEl.className = "winner";
-    return;
   }
 
   if (keys.a && player.x > 0) {
@@ -115,7 +200,5 @@ const update = () => {
   blocks.forEach((block) => {
     block.update();
   });
+  return;
 };
-
-// UPDATES EVERY 20 MILISECONDS
-setInterval(update, 20);
